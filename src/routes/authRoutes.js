@@ -17,7 +17,7 @@ router.post("/signup", async (req, res) => {
     const token = jwt.sign({ userId: user._id }, process.env.AUTH_KEY);
     res.send({ token });
   } catch (err) {
-    return res.status(422).send(err);
+    return res.status(422).send({ error: "Email already registered" });
   }
 });
 

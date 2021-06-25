@@ -15,7 +15,6 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.pre("save", function(next) {
-  console.log("here2");
   // so this points to the schema, with arrow will point to the entire file
   const user = this;
   if (!user.isModified("password")) {
